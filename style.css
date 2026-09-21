@@ -1,0 +1,1207 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #f5f5f5;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+:root {
+    --gold: #d4af37;
+    --light-gold: #f5d77a;
+    --black: #080808;
+    --dark: #111111;
+    --gray: #b7b7b7;
+}
+
+
+/* =========================
+   PRELOADER
+========================= */
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: #080808;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-logo {
+    width: 75px;
+    height: 75px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--gold);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+
+    animation: pulse 1.5s infinite;
+}
+
+#preloader p {
+    margin-top: 15px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    font-size: 12px;
+}
+
+@keyframes pulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 18px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(15px);
+
+    z-index: 1000;
+
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo span {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold);
+    font-size: 25px;
+    letter-spacing: 4px;
+}
+
+.logo small {
+    color: #fff;
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    font-size: 12px;
+    color: #ddd;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 28px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.92),
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.85)
+        ),
+        url("images/bridal1.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+    padding-top: 80px;
+}
+
+.small-title {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(60px, 9vw, 110px);
+    line-height: .85;
+    font-weight: 500;
+}
+
+.hero h1 span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.hero-text {
+    max-width: 550px;
+    color: #ddd;
+    margin-top: 30px;
+    line-height: 1.8;
+}
+
+.hero-text strong {
+    color: var(--gold);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.btn {
+    padding: 14px 28px;
+    display: inline-block;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.gold-btn {
+    background: var(--gold);
+    color: #000;
+}
+
+.gold-btn:hover {
+    background: var(--light-gold);
+    transform: translateY(-3px);
+}
+
+.outline-btn {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.outline-btn:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    right: 7%;
+
+    color: var(--gold);
+    font-size: 11px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+    padding: 110px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-title p {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-size: 11px;
+    margin-bottom: 12px;
+}
+
+.section-title h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 55px;
+    font-weight: 500;
+}
+
+.section-title h2 span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.line {
+    width: 55px;
+    height: 1px;
+    background: var(--gold);
+    margin: 20px auto;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.image-frame {
+    border: 1px solid var(--gold);
+    padding: 10px;
+}
+
+.image-frame img {
+    height: 550px;
+    object-fit: cover;
+}
+
+.experience-box {
+    position: absolute;
+    right: -30px;
+    bottom: 30px;
+
+    background: var(--gold);
+    color: #000;
+
+    padding: 20px 25px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-box strong {
+    font-size: 35px;
+}
+
+.experience-box span {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.gold-text {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 11px;
+}
+
+.about-content h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 50px;
+    margin: 12px 0 25px;
+}
+
+.about-content h3 span {
+    color: var(--gold);
+}
+
+.about-content > p:not(.gold-text) {
+    color: #aaa;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.about-points {
+    margin-top: 30px;
+}
+
+.about-points div {
+    padding: 9px 0;
+    color: #ddd;
+    font-size: 13px;
+}
+
+.about-points span {
+    color: var(--gold);
+    margin-right: 10px;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    background: #0d0d0d;
+}
+
+.service-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.service-card {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #111;
+
+    border: 1px solid #222;
+
+    transition: .4s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+}
+
+.service-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #888;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   PACKAGES
+========================= */
+
+.package-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.package-card {
+    position: relative;
+
+    padding: 40px 25px;
+
+    background: #101010;
+
+    border: 1px solid #282828;
+
+    text-align: center;
+
+    transition: .4s;
+}
+
+.package-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-8px);
+}
+
+.package-card.featured {
+    border-color: var(--gold);
+}
+
+.popular {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: var(--gold);
+    color: #000;
+
+    padding: 6px 15px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.package-card > p {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 10px;
+}
+
+.package-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    margin: 12px 0;
+}
+
+.price {
+    font-size: 34px;
+    color: var(--gold);
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.package-card ul {
+    list-style: none;
+    color: #aaa;
+    font-size: 11px;
+    line-height: 2.5;
+}
+
+.package-btn {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 11px 20px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.package-btn:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+
+/* =========================
+   WHY
+========================= */
+
+.why {
+    background:
+        linear-gradient(
+            rgba(0,0,0,.8),
+            rgba(0,0,0,.8)
+        ),
+        url("images/bridal2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.why-grid {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.why-grid div {
+    text-align: center;
+    padding: 30px;
+    border-right: 1px solid #444;
+}
+
+.why-grid div:last-child {
+    border-right: none;
+}
+
+.why-grid strong {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold);
+    font-size: 50px;
+}
+
+.why-grid p {
+    color: #ccc;
+    font-size: 11px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    background: #0d0d0d;
+}
+
+.gallery-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.gallery-item {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: .6s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 25px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,.85)
+    );
+
+    opacity: 0;
+
+    transition: .4s;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay span {
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-size: 11px;
+}
+
+
+/* =========================
+   CERTIFICATE
+========================= */
+
+.certificate {
+    background: #101010;
+}
+
+.certificate-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+
+    align-items: center;
+}
+
+.certificate-content h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+.certificate-content h2 span {
+    color: var(--gold);
+}
+
+.certificate-content > p:not(.gold-text) {
+    color: #999;
+    line-height: 1.9;
+}
+
+.certificate-points {
+    margin-top: 25px;
+}
+
+.certificate-points p {
+    color: #ddd;
+    margin: 10px 0;
+    font-size: 13px;
+}
+
+.certificate-points p::first-letter {
+    color: var(--gold);
+}
+
+.certificate-image {
+    border: 1px solid var(--gold);
+    padding: 10px;
+}
+
+.certificate-image img {
+    max-height: 450px;
+    object-fit: contain;
+}
+
+
+/* =========================
+   REVIEWS
+========================= */
+
+.review-grid {
+    max-width: 1050px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review-card {
+    padding: 35px;
+    background: #111;
+    border: 1px solid #222;
+}
+
+.stars {
+    color: var(--gold);
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.review-card p {
+    color: #aaa;
+    font-size: 12px;
+    line-height: 2;
+    font-style: italic;
+}
+
+.review-card h4 {
+    margin-top: 20px;
+    color: #eee;
+    font-size: 12px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: #0d0d0d;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 60px;
+}
+
+.contact-box {
+    display: flex;
+    gap: 20px;
+
+    padding: 22px 0;
+
+    border-bottom: 1px solid #292929;
+}
+
+.contact-icon {
+    font-size: 25px;
+}
+
+.contact-box h3 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold);
+    font-size: 22px;
+}
+
+.contact-box p,
+.contact-box a {
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.booking-form {
+    background: #111;
+    border: 1px solid #292929;
+    padding: 40px;
+}
+
+.booking-form h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 35px;
+}
+
+.form-note {
+    color: #888;
+    font-size: 11px;
+    line-height: 1.7;
+    margin: 10px 0 25px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    width: 100%;
+
+    background: #080808;
+    color: #fff;
+
+    border: 1px solid #292929;
+
+    padding: 14px;
+
+    margin-bottom: 12px;
+
+    outline: none;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    border-color: var(--gold);
+}
+
+.booking-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+
+    border: none;
+
+    background: var(--gold);
+    color: #000;
+
+    padding: 15px;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    transition: .3s;
+}
+
+.submit-btn:hover {
+    background: var(--light-gold);
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    text-align: center;
+    padding: 100px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.85),
+            rgba(0,0,0,.85)
+        ),
+        url("images/bridal3.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.cta p {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 10px;
+}
+
+.cta h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 65px;
+    margin: 15px 0 30px;
+}
+
+.cta h2 span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: #050505;
+}
+
+.footer-logo h2 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--gold);
+    letter-spacing: 4px;
+}
+
+.footer-logo p {
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-top: 8px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.footer-social a {
+    color: #aaa;
+    font-size: 11px;
+}
+
+.footer-social a:hover {
+    color: var(--gold);
+}
+
+.copyright {
+    color: #555;
+    font-size: 9px;
+}
+
+.developer {
+    color: #777;
+    font-size: 9px;
+    margin-top: 10px;
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: #25D366;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    z-index: 1000;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,.5);
+
+    animation: whatsappPulse 2s infinite;
+}
+
+@keyframes whatsappPulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37,211,102,0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37,211,102,0);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    nav {
+        gap: 15px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .package-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        background: #090909;
+
+        display: none;
+        flex-direction: column;
+
+        padding: 20px 7%;
+
+        border-bottom: 1px solid #222;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 10px 0;
+    }
+
+
+    .hero-content {
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .section {
+        padding: 80px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 45px;
+    }
+
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .image-frame img {
+        height: 450px;
+    }
+
+    .experience-box {
+        right: 10px;
+    }
+
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .package-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid div {
+        border-right: none;
+        border-bottom: 1px solid #444;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-item {
+        height: 300px;
+    }
+
+
+    .certificate-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+
+    .review-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .logo span {
+        font-size: 20px;
+    }
+
+    .logo small {
+        font-size: 7px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero-text {
+        font-size: 12px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 430px;
+    }
+
+    .why-grid strong {
+        font-size: 40px;
+    }
+
+    .booking-form {
+        padding: 25px;
+    }
+
+    .cta h2 {
+        font-size: 50px;
+    }
+
+}
